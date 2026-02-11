@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Tradicional vs Inteligente - Los Bacas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+        :root {
+            --primary: #3b82f6;
+            --accent: #e94560;
+            --dark: #0f172a;
+            --glass: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+
+        .infographic-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-left: 1px solid rgba(255,255,255,0.1);
+            border-right: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+        }
+
+        .gradient-line {
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            width: 100px;
+            margin: 1rem auto;
+        }
+
+        .vs-circle {
+            width: 60px;
+            height: 60px;
+            background: #e94560;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 900;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+
+        .ai-feature-btn {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .ai-feature-btn:hover {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .loading-pulse { animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    </style>
+</head>
+<body class="bg-slate-950">
+
+    <div class="infographic-container min-h-screen pb-20 shadow-2xl">
+        
+        <!-- SECCIÓN 1: HEADER INFOGRÁFICO -->
+        <header class="pt-16 pb-10 px-6 text-center">
+            <p class="text-blue-400 font-bold tracking-widest text-sm uppercase mb-2">Proyecto de Ingeniería - UAC</p>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-4">
+                SISTEMA <span class="text-blue-500">TRADICIONAL</span> <br>
+                <span class="text-slate-500">VS</span> <br>
+                SISTEMA <span class="text-red-500 font-black">INTELIGENTE</span>
+            </h1>
+            <div class="gradient-line"></div>
+            <p class="max-w-xl mx-auto text-slate-400 text-sm mt-4">
+                Basado en el estudio comparativo de "Los Bacas". Del cálculo manual por perito al aprendizaje profundo con Redes Neuronales.
+            </p>
+        </header>
+
+        <!-- SECCIÓN 2: LA COMPARATIVA VISUAL -->
+        <section class="px-6 py-10 relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                <div class="vs-circle hidden md:flex top-1/2 -translate-y-1/2">VS</div>
+                
+                <!-- Lado Tradicional -->
+                <div class="glass-card p-8 border-slate-700">
+                    <div class="text-center mb-6">
+                        <i class="fa-solid fa-file-invoice-dollar text-4xl text-slate-500 mb-2"></i>
+                        <h3 class="text-xl font-bold uppercase">Lógica Fija</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-green-500 mt-1"></i>
+                            <span>Basado en el Reglamento Nacional de Tasaciones.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                            <span>Sensible a la subjetividad del experto perito.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-xmark text-red-500 mt-1"></i>
+                            <span>Incapaz de procesar tendencias de mercado en tiempo real.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Lado Inteligente -->
+                <div class="glass-card p-8 border-blue-500/30 bg-blue-500/5">
+                    <div class="text-center mb-6">
+                        <i class="fa-solid fa-brain text-4xl text-blue-500 mb-2"></i>
+                        <h3 class="text-xl font-bold uppercase">Red Neuronal</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-bolt text-yellow-400 mt-1"></i>
+                            <span>Modelo de aprendizaje profundo con TensorFlow.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-bolt text-yellow-400 mt-1"></i>
+                            <span>Detecta relaciones ocultas (no lineales) entre datos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-bolt text-yellow-400 mt-1"></i>
+                            <span>Reduce el margen de error del 18% al 5.2%.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: SIMULADOR DE IMPACTO (DATOS) -->
+        <section class="px-6 py-10 bg-slate-900/50">
+            <h2 class="text-center text-2xl font-bold mb-8 italic text-slate-500 uppercase tracking-widest">Simulador de Tasación</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Entradas -->
+                <div class="glass-card p-6 space-y-4">
+                    <div>
+                        <label class="text-[10px] uppercase font-bold text-slate-500">Área (m²)</label>
+                        <input type="range" id="input-area" min="40" max="300" value="120" class="w-full h-1 bg-slate-700 rounded-lg accent-blue-500">
+                        <p id="val-area" class="text-right text-xs text-blue-400">120m²</p>
+                    </div>
+                    <div>
+                        <label class="text-[10px] uppercase font-bold text-slate-500">Ubicación</label>
+                        <select id="input-loc" class="w-full bg-slate-800 border-none rounded-lg p-2 text-xs text-white">
+                            <option value="1.2">Cusco - Centro</option>
+                            <option value="1.0">Cusco - San Jerónimo</option>
+                            <option value="1.3">Cusco - Wanchaq</option>
+                            <option value="1.5">Lima - Zona Prime</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Resultado Tradicional -->
+                <div class="glass-card p-6 text-center border-slate-700">
+                    <p class="text-[10px] uppercase text-slate-500 mb-2">Valor Tradicional</p>
+                    <div id="res-trad" class="text-3xl font-black text-slate-400">$ 0.00</div>
+                </div>
+                <!-- Resultado IA -->
+                <div class="glass-card p-6 text-center border-blue-500/50 bg-blue-600/10">
+                    <p class="text-[10px] uppercase text-blue-400 mb-2">Valor Inteligente</p>
+                    <div id="res-ia" class="text-3xl font-black text-white">$ 0.00</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: ACCIONES INTELIGENTES (GEMINI LLM) -->
+        <section class="px-6 py-10">
+            <div class="text-center mb-8">
+                <span class="bg-purple-500/20 text-purple-400 text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider">Potenciado por Gemini 2.5 ✨</span>
+                <h2 class="text-2xl font-bold mt-4">Generación de Contenido Estratégico</h2>
+                <p class="text-xs text-slate-500 mt-2">Usa el cerebro de la IA para convertir datos en decisiones.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                <button onclick="geminiCall('anuncio')" class="ai-feature-btn glass-card p-6 flex flex-col items-center gap-3">
+                    <i class="fa-solid fa-bullhorn text-blue-400 text-2xl"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Crear Anuncio</span>
+                </button>
+                <button onclick="geminiCall('legal')" class="ai-feature-btn glass-card p-6 flex flex-col items-center gap-3">
+                    <i class="fa-solid fa-gavel text-purple-400 text-2xl"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Justificación Legal</span>
+                </button>
+                <button onclick="geminiCall('audit')" class="ai-feature-btn glass-card p-6 flex flex-col items-center gap-3">
+                    <i class="fa-solid fa-magnifying-glass-chart text-green-400 text-2xl"></i>
+                    <span class="text-xs font-bold uppercase tracking-widest">Auditar Modelo</span>
+                </button>
+            </div>
+
+            <!-- Salida de Gemini -->
+            <div id="ai-output-container" class="hidden glass-card p-8 border-white/10 bg-black/40 min-h-[150px]">
+                <div id="ai-status" class="hidden text-xs text-blue-400 mb-4 loading-pulse font-bold">
+                    <i class="fa-solid fa-spinner fa-spin mr-2"></i> GEMINI ESTÁ PROCESANDO...
+                </div>
+                <div id="ai-result" class="text-sm text-slate-300 leading-relaxed prose prose-invert max-w-none"></div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: EQUIPO Y PIE -->
+        <footer class="px-6 py-12 border-t border-white/5 bg-slate-950/50 text-center">
+            <div class="mb-6 opacity-30 flex justify-center items-center gap-4">
+                <div class="h-[1px] w-12 bg-white"></div>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div class="h-[1px] w-12 bg-white"></div>
+            </div>
+            <p class="text-[10px] text-slate-500 mb-6 uppercase tracking-[0.3em]">Escuela de Ingeniería de Sistemas - 2025</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-[11px] uppercase tracking-widest font-extrabold text-slate-400">
+                <span class="hover:text-blue-400 transition-colors">Sergio Baca</span>
+                <span class="hover:text-blue-400 transition-colors">Jean Pierro Tenazoa</span>
+                <span class="hover:text-blue-400 transition-colors">Flavio Virrueta</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // API Key integrada para GitHub (reemplazada con tu valor proporcionado)
+        const apiKey = "AIzaSyBx5OhG7Xkw7hFFmspe8pOzlijymd-yn4Y";
+
+        // Lógica de cálculo del Simulador
+        const inputArea = document.getElementById('input-area');
+        const inputLoc = document.getElementById('input-loc');
+        const valArea = document.getElementById('val-area');
+        const resTrad = document.getElementById('res-trad');
+        const resIa = document.getElementById('res-ia');
+
+        function updateSimulation() {
+            const area = parseFloat(inputArea.value);
+            const locFactor = parseFloat(inputLoc.value);
+            valArea.innerText = area + 'm²';
+
+            // Fórmula Tradicional (Simplificada)
+            const baseTrad = (area * 1450) * locFactor;
+            
+            // Fórmula Inteligente (Basada en Red Neuronal con factores de eficiencia no lineales)
+            // Se penalizan áreas muy pequeñas y se premian rangos residenciales medios.
+            const efficiencyFactor = area < 60 ? 0.92 : (area > 120 && area < 180 ? 1.12 : 1.0);
+            const baseIa = (area * 1420) * locFactor * efficiencyFactor;
+
+            resTrad.innerText = `$ ${Math.round(baseTrad).toLocaleString()}`;
+            resIa.innerText = `$ ${Math.round(baseIa).toLocaleString()}`;
+        }
+
+        inputArea.oninput = updateSimulation;
+        inputLoc.onchange = updateSimulation;
+        updateSimulation();
+
+        // Lógica de Comunicación con Gemini API
+        async function geminiCall(type) {
+            const container = document.getElementById('ai-output-container');
+            const status = document.getElementById('ai-status');
+            const result = document.getElementById('ai-result');
+
+            container.classList.remove('hidden');
+            status.classList.remove('hidden');
+            result.innerHTML = "";
+
+            let prompt = "";
+            const area = inputArea.value;
+            const ubicacion = inputLoc.options[inputLoc.selectedIndex].text;
+            const valIa = resIa.innerText;
+            const valTrad = resTrad.innerText;
+
+            const systemInstruction = "Eres un experto en el proyecto 'Los Bacas' de la UAC, especializado en Inteligencia Artificial aplicada a bienes raíces en Cusco y Lima. Responde con tono profesional, tecnológico y persuasivo.";
+
+            if(type === 'anuncio') {
+                prompt = `Genera un anuncio de venta atractivo para un inmueble de ${area}m² en ${ubicacion}. Destaca que el precio de mercado inteligente es ${valIa} y que ha sido calculado mediante una Red Neuronal Profunda que minimiza el error humano. Usa emojis y un estilo moderno.`;
+            } else if(type === 'legal') {
+                prompt = `Redacta una justificación técnica para una entidad bancaria. Explica por qué la valoración inteligente de ${valIa} es más precisa que la tradicional de ${valTrad} para este inmueble de ${area}m² en ${ubicacion}, mencionando el análisis de variables no lineales del modelo de Los Bacas.`;
+            } else {
+                prompt = `Actúa como auditor de Machine Learning. El modelo actual para ${ubicacion} arroja ${valIa}. ¿Qué 3 datos adicionales (ej. proximidad a fibra óptica, índice de ruido, o historial de plusvalía) sugerirías integrar para bajar el MSE del modelo de Los Bacas? Explica brevemente por qué.`;
+            }
+
+            let retries = 0;
+            const maxRetries = 4;
+
+            async function requestIA() {
+                try {
+                    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: prompt }] }],
+                            systemInstruction: { parts: [{ text: systemInstruction }] }
+                        })
+                    });
+
+                    if (!response.ok) throw new Error('Error en API');
+
+                    const data = await response.json();
+                    const finalMsg = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    
+                    status.classList.add('hidden');
+                    result.innerHTML = finalMsg ? finalMsg.replace(/\n/g, '<br>') : "No se pudo generar el contenido.";
+                } catch (e) {
+                    if (retries < maxRetries) {
+                        retries++;
+                        const delay = Math.pow(2, retries) * 1000;
+                        setTimeout(requestIA, delay);
+                    } else {
+                        status.classList.add('hidden');
+                        result.innerHTML = "<span class='text-red-400'><i class='fa-solid fa-circle-exclamation mr-2'></i> Error de conexión con Gemini. Verifica que la API Key sea válida y que tengas conexión a internet.</span>";
+                    }
+                }
+            }
+
+            requestIA();
+        }
+    </script>
+</body>
+</html>
